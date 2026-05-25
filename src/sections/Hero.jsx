@@ -76,7 +76,7 @@ export const Hero = () => {
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton
-                href="/Utkarsh_Resume.pdf"
+                href="/Utkarsh_Yuvraj_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
