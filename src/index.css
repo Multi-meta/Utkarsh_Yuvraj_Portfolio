@@ -27,6 +27,8 @@
   html {
     scroll-behavior: smooth;
     font-size: 17px;
+    background-color: #0f1418;
+    overscroll-behavior: none;
   }
 
   button {
@@ -37,6 +39,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
+    zoom: 0.9;
+    -webkit-font-smoothing: antialiased;
   }
 
   .font-serif {
@@ -48,13 +52,17 @@
   .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    will-change: transform;
   }
 
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+    will-change: transform;
   }
 
   .glow-text {
@@ -74,12 +82,10 @@
     from {
       opacity: 0;
       transform: translateY(20px);
-      filter: blur(10px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
-      filter: blur(0);
     }
   }
 
