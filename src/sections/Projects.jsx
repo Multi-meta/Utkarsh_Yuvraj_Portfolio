@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -8,6 +8,7 @@ const projects = [
     image: "/projects/Smart_PDF_Zone_Scanner.png",
     tags: ["Node.js", "Express.js", "Python", "Tesseract OCR"],
     github: "https://github.com/Multi-meta/Smart_PDF_Zone_Scanner",
+    link: "https://smart-pdf-zone-scanner.vercel.app/",
   },
   {
     title: "Bookify",
@@ -59,7 +60,7 @@ const ProjectCard = ({ project, delay }) => (
       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
 
       {/* Github Link */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 flex items-center gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <a
           href={project.github}
           target="_blank"
@@ -69,6 +70,17 @@ const ProjectCard = ({ project, delay }) => (
         >
           <Github className="w-5 h-5" />
         </a>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+            aria-label={`${project.title} live demo`}
+          >
+            <ExternalLink className="w-5 h-5" />
+          </a>
+        )}
       </div>
     </div>
 
