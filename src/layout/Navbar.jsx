@@ -72,7 +72,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-strong animate-fade-in" style={{ backdropFilter: "blur(60px)", WebkitBackdropFilter: "blur(60px)" }}>
+        <div className="md:hidden glass-strong animate-fade-in" style={{ backdropFilter: "blur(80px)", WebkitBackdropFilter: "blur(80px)" }}>
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navLinks.map((link, index) => (
               <a

@@ -51,16 +51,16 @@
 @layer components {
   .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
     will-change: transform;
   }
 
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
     will-change: transform;
   }
@@ -179,7 +179,7 @@
 
   .animated-border:hover {
     background-color: color-mix(in srgb, #26c4b8 15%, transparent);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(32px);
     box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
   }
 
