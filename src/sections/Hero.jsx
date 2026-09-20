@@ -141,7 +141,7 @@ export const Hero = () => {
                 />
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 glass-strong rounded-xl px-4 py-3 animate-float">
+                <div className="absolute bottom-3 right-3 sm:-bottom-4 sm:-right-4 z-20 rounded-xl border border-primary/30 bg-surface/95 px-4 py-3 shadow-xl backdrop-blur-xl animate-float">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <span className="text-sm font-medium">
@@ -150,7 +150,7 @@ export const Hero = () => {
                   </div>
                 </div>
                 {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                <div className="absolute top-3 left-3 sm:-top-4 sm:-left-4 z-20 rounded-xl border border-primary/30 bg-surface/95 px-4 py-3 shadow-xl backdrop-blur-xl animate-float animation-delay-500">
                   <div className="text-2xl font-bold text-primary">10+</div>
                   <div className="text-xs text-muted-foreground">
                     Skills Mastered
