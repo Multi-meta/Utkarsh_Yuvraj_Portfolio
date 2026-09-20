@@ -2,13 +2,19 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Smart PDF Zone Scanner",
+    title: "PDF Zone Scanner",
     description:
-      "A web based tool to scan large batches of PDF files for specific text in the header, footer, content area, or entire document, with OCR support for Hindi and English on scanned PDFs and CSV export of results.",
+      "A PDF scanner with REST APIs, deployed live for the Bihar State Election Commission, supporting configurable scan zones, 1000+ file batches, and bilingual Hindi + English OCR with fuzzy matching.",
     image: "/projects/Smart_PDF_Zone_Scanner.png",
-    tags: ["Node.js", "Express.js", "Python", "Tesseract OCR"],
-    github: "https://github.com/Multi-meta/Smart_PDF_Zone_Scanner",
-    link: "https://smart-pdf-zone-scanner.vercel.app/",
+    tags: [
+      "ASP.NET Core",
+      "Python",
+      "FastAPI",
+      "SQL (MySQL)",
+      "Tesseract OCR",
+      "Ollama",
+    ],
+    link: "https://sec25.bihar.gov.in/ScannerPool",
   },
   {
     title: "Bookify",
@@ -25,6 +31,7 @@ const projects = [
     image: "/projects/Blogify.png",
     tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
     github: "https://github.com/Multi-meta/Blogify-addBlog-",
+    link: "https://blogify-add-blog.vercel.app/",
   },
   {
     title: "Secure URL Shortener",
@@ -44,53 +51,58 @@ const projects = [
   },
 ];
 
+const IconLink = ({ href, label, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+  >
+    {children}
+  </a>
+);
+
 const ProjectCard = ({ project, delay }) => (
   <div
     className="group glass rounded-2xl overflow-hidden animate-fade-in flex flex-col h-full"
     style={{ animationDelay: `${delay}ms` }}
   >
     {/* Image */}
-    <div className="relative overflow-hidden min-h-[220px]">
+    <div className="relative aspect-[16/10] overflow-hidden">
       <img
         src={project.image}
         alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
 
-      {/* Github Link */}
+      {/* Github + Live Links */}
       <div className="absolute inset-0 flex items-center gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-          aria-label={`${project.title} source code`}
-        >
-          <Github className="w-5 h-5" />
-        </a>
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-            aria-label={`${project.title} live demo`}
+        {project.github && (
+          <IconLink
+            href={project.github}
+            label={`${project.title} source code`}
           >
+            <Github className="w-5 h-5" />
+          </IconLink>
+        )}
+        {project.link && (
+          <IconLink href={project.link} label={`${project.title} live demo`}>
             <ExternalLink className="w-5 h-5" />
-          </a>
+          </IconLink>
         )}
       </div>
     </div>
 
     {/* Content */}
     <div className="p-5 flex flex-col flex-grow">
-      <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+      <h3 className="text-xl font-semibold mb-3 min-h-[3.5rem] group-hover:text-primary transition-colors">
         {project.title}
       </h3>
 
-      <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
+      <p className="text-muted-foreground text-sm leading-relaxed flex-grow xl:min-h-[5.75rem]">
         {project.description}
       </p>
 

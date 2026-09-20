@@ -1,4 +1,27 @@
+import { ExternalLink } from "lucide-react";
+
 const experiences = [
+  {
+    period: "17 May - 17 Jul 2026 (Onsite)",
+    role: "Web Developer Intern",
+    company: "Software Education & Research (P) Ltd.",
+    client: "Client: State Election Commission of Bihar",
+    description:
+      "Built production systems onsite for the Bihar State Election Commission: a PDF Zone Scanner with configurable scan zones, 1000+ file batches and bilingual Hindi + English OCR, plus an LLM chatbot with read only query validation.",
+    technologies: [
+      "ASP.NET Core",
+      "Python",
+      "FastAPI",
+      "SQL (MySQL)",
+      "Tesseract OCR",
+      "Ollama",
+    ],
+    certificateLink:
+      "https://drive.google.com/file/d/1_xGKNjv5b4Gy6UtgXK4kJi0c8hLYf1pE/view",
+    lorLink:
+      "https://drive.google.com/file/d/1jxA_mpF5uESnnVjTulSt5FBvn5YxdbgZ/view",
+    current: false,
+  },
   {
     period: "Aug 2025 - May 2026",
     role: "Core & Backend Member",
@@ -6,6 +29,8 @@ const experiences = [
     description:
       "Part of the backend team at GDG IIIT Sri City, helping with technical events, learning from peers, and contributing to developer focused workshops and sessions.",
     technologies: ["Node.js", "Express.js", "MongoDB", "REST API"],
+    certificateLink:
+      "https://drive.google.com/file/d/1y4AhWM-TwewXCAf-HZsyWfQ6N9sUu-W1/view",
     current: true,
   },
   {
@@ -15,6 +40,8 @@ const experiences = [
     description:
       "Tested web application features, identified and reported bugs, and ensured the quality and functionality of the platform. Collaborated with the development team to validate fixes and improvements.",
     technologies: ["Testing", "Bug Reporting", "QA"],
+    certificateLink:
+      "https://drive.google.com/file/d/1B7kMMX_5tcBwusGVXiRuboVJubT-F_sN/view",
     current: false,
   },
   {
@@ -33,6 +60,8 @@ const experiences = [
     description:
       "Assisted with operations and logistics for the TEDx event at IIIT Sri City, coordinating with team members to help ensure smooth execution of the event.",
     technologies: ["Event Management", "Logistics", "Coordination"],
+    certificateLink:
+      "https://drive.google.com/file/d/1IYdErsfM9Zlf94_moIoa4ksDECsfpP5j/view",
     current: false,
   },
 ];
@@ -107,6 +136,11 @@ export const Experience = () => {
                     </span>
                     <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
                     <p className="text-muted-foreground">{exp.company}</p>
+                    {exp.client && (
+                      <p className="text-sm text-primary/80 mt-1">
+                        {exp.client}
+                      </p>
+                    )}
                     <p className="text-sm text-muted-foreground mt-4">
                       {exp.description}
                     </p>
@@ -124,6 +158,36 @@ export const Experience = () => {
                         </span>
                       ))}
                     </div>
+                    {(exp.lorLink || exp.certificateLink) && (
+                      <div
+                        className={`flex flex-wrap gap-3 mt-5 ${
+                          idx % 2 === 0 ? "md:justify-end" : ""
+                        }`}
+                      >
+                        {exp.lorLink && (
+                          <a
+                            href={exp.lorLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            View LOR
+                          </a>
+                        )}
+                        {exp.certificateLink && (
+                          <a
+                            href={exp.certificateLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            View Certificate
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

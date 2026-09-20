@@ -6,8 +6,12 @@ import {
   Linkedin,
   Instagram,
   Download,
+  ExternalLink,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+
+const CERTIFICATES_LINK =
+  "https://drive.google.com/file/d/1RO3f4cND3lIQGIyylvsOEYGa40BFZDhF/view?usp=sharing";
 
 export const Hero = () => {
   return (
@@ -82,6 +86,14 @@ export const Hero = () => {
               >
                 <Download className="w-5 h-5" />
                 Download Resume
+              </AnimatedBorderButton>
+              <AnimatedBorderButton
+                href={CERTIFICATES_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="w-5 h-5" />
+                My Certificates
               </AnimatedBorderButton>
             </div>
 
